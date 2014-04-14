@@ -1,3 +1,5 @@
+ // The folloing code is very much a proof of concept. Although functional, there are wholes and bits that have not been fully debuged because of lack of time. Also, the URL for the Berkeley Labs no longer works.
+ 
   $(document).ready(function() {
     var ctl = new Leap.Controller({enableGestures: true});
 
@@ -8,7 +10,7 @@
 
 
     var slider = _.debounce(function(xDir, yDir) {
-      /*
+      /*  Use the following to tune the motion detector as needed.
       x += xDir;
       x = (x + 5) % 5;
       y += yDir;
@@ -59,9 +61,7 @@
 
       //var shadestate = get_url_params('http://smarterwindow.lbl.gov/sensors/all');
       //alert(get_url_params('http://smarterwindow.lbl.gov/sensors/all'));
-
-      loadXMLDoc ('http://smarterwindow.lbl.gov/actions/override?timeout_seconds=1200&api_key=AEChackathon2');
-
+      
       //if(!shadestate) {alert('fail');}
       var shadeClosed = true;
       var results = [];
@@ -76,7 +76,7 @@
               shadeClosed = false; alert ('closing');
           } 
       }
-
+      // cation, URL no longer working
       if(textVal=='Down' && shadeClosed==false) {
         loadXMLDoc ('http://smarterwindow.lbl.gov/actions/override?timeout_seconds=120&api_key=AEChackathon');
       }
@@ -88,6 +88,7 @@
       return false;
     }
 
+// this function is used to get the state of the window.  Will need to be edited when the URL is revived.
 function get_url_params(u){
     
           var theURL = u;
